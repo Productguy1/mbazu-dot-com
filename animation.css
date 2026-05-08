@@ -1,0 +1,53 @@
+/* ── Page entrance animation ──────────────────── */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Base: everything starts hidden */
+header,
+main > p,
+.writing,
+.visitor-bar {
+  opacity: 0;
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Staggered delays — homepage */
+header              { animation-delay: 0ms; }
+main > p:nth-child(1) { animation-delay: 80ms; }
+main > p:nth-child(2) { animation-delay: 160ms; }
+main > p:nth-child(3) { animation-delay: 240ms; }
+main > p:nth-child(4) { animation-delay: 320ms; }
+main > p:nth-child(5) { animation-delay: 400ms; }
+main > p:nth-child(6) { animation-delay: 460ms; }
+.writing            { animation-delay: 520ms; }
+.visitor-bar        { animation-delay: 580ms; }
+
+/* Staggered delays — article page */
+.back-link,
+.article-header,
+.article-body > * {
+  opacity: 0;
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.back-link                      { animation-delay: 0ms; }
+.article-header                 { animation-delay: 80ms; }
+.article-body > *:nth-child(1)  { animation-delay: 160ms; }
+.article-body > *:nth-child(2)  { animation-delay: 220ms; }
+.article-body > *:nth-child(3)  { animation-delay: 280ms; }
+.article-body > *:nth-child(4)  { animation-delay: 340ms; }
+.article-body > *:nth-child(5)  { animation-delay: 400ms; }
+.article-body > *:nth-child(6)  { animation-delay: 450ms; }
+.article-body > *:nth-child(7)  { animation-delay: 500ms; }
+.article-body > *:nth-child(8)  { animation-delay: 540ms; }
+.article-body > *:nth-child(9)  { animation-delay: 580ms; }
+.article-body > *:nth-child(n+10) { animation-delay: 620ms; }

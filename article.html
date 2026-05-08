@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rings in Shadows — Daniel Mbazu</title>
+  <meta name="description" content="Why most UI shadows fail, and the ring shadow pattern that fixes them." />
+  <link rel="canonical" href="https://mbazu.com/rings-in-shadows" />
+  <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon_32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="Images/favicon_180x180.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mbazu.com/rings-in-shadows" />
+  <meta property="og:title" content="Rings in Shadows — Daniel Mbazu" />
+  <meta property="og:description" content="Why most UI shadows fail, and the ring shadow pattern that fixes them." />
+  <meta property="og:image" content="https://mbazu.com/Images/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@TheProductGuy__" />
+  <meta name="twitter:title" content="Rings in Shadows — Daniel Mbazu" />
+  <meta name="twitter:description" content="Why most UI shadows fail, and the ring shadow pattern that fixes them." />
+  <meta name="twitter:image" content="https://mbazu.com/Images/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="animation.css" />
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Index
+    </a>
+    <article>
+      <header class="article-header">
+        <h1 class="article-title">Rings in shadows</h1>
+        <time class="article-date">16 Feb 2026</time>
+      </header>
+
+      <div class="article-body">
+
+        <p>
+          Shadows are one of the most misused tools in interface design. Used carelessly, they flatten instead of elevate, and add noise instead of depth. This is an attempt to think through why that happens, and how to fix it.
+        </p>
+
+        <p>
+          The problem usually starts with defaults. Drop shadows in most design tools are configured with a large blur radius and no consideration for light source. The result is a shadow that radiates evenly in all directions — which is physically impossible, and visually unconvincing.
+        </p>
+
+        <!-- Image -->
+        <figure class="media-block">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80" alt="Shadow study example" loading="lazy" />
+          <figcaption>A consistent light source makes all the difference.</figcaption>
+        </figure>
+
+        <p>
+          Real shadows have a direction. They're cast by a light source positioned somewhere above and slightly in front of the surface. In most UI work, that source sits at the top — which means shadows should fall downward, not outward.
+        </p>
+
+        <p>
+          A good shadow has three properties working together: offset, blur, and opacity. Offset determines direction. Blur determines softness. Opacity determines weight. Get all three wrong and no amount of tweaking will save it.
+        </p>
+
+        <!-- GIF or image -->
+        <figure class="media-block">
+          <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80" alt="Shadow depth comparison" loading="lazy" />
+          <figcaption>Same element, three different shadow configurations.</figcaption>
+        </figure>
+
+        <p>
+          The ring shadow — a thin, crisp outline combined with a softer ambient layer beneath — is one of the most reliable patterns I keep coming back to. It gives an element definition without making it feel heavy, and it scales from small UI components to large cards without losing its character.
+        </p>
+
+        <!-- Video -->
+        <figure class="media-block">
+          <video controls playsinline>
+            <source src="your-video.mp4" type="video/mp4" />
+            Your browser doesn't support video.
+          </video>
+          <figcaption>The ring shadow in motion — hover interaction on a card component.</figcaption>
+        </figure>
+
+        <p>
+          The recipe is simple: a 0px offset, 0px blur, 1px spread shadow at low opacity acts as the ring. Beneath it, a 0px x-offset, 4-8px y-offset, 12-24px blur shadow at very low opacity acts as the depth layer. Together, they read as a single, coherent shadow.
+        </p>
+
+        <p>
+          Try it. You'll stop reaching for the generic drop shadow almost immediately.
+        </p>
+
+      </div>
+    </article>
+
+  </div>
+</body>
+</html>
