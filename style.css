@@ -422,7 +422,7 @@ a:hover {
 
   /* Homepage only — has a direct header child inside container */
   .container:has(> header) {
-    padding-top: 112px;
+    padding-top: 104px;
   }
 
   header {
@@ -445,5 +445,31 @@ a:hover {
 
   .coming-soon a {
     pointer-events: none;
+  }
+
+  /* Disable writing hover effects on mobile */
+  .post-list:hover .post-item:not(:hover) .post-title,
+  .post-list:hover .post-item:not(:hover) .post-desc {
+    opacity: 1;
+  }
+
+  .post-item:hover {
+    border-bottom-color: transparent;
+  }
+
+  .post-item:last-child {
+    border-bottom-color: rgba(0, 0, 0, 0.07);
+  }
+
+  .post-item:hover + .post-item {
+    border-top-color: rgba(0, 0, 0, 0.07);
+  }
+
+  [data-theme="dark"] .post-item:last-child {
+    border-bottom-color: rgba(255, 255, 255, 0.07);
+  }
+
+  [data-theme="dark"] .post-item:hover + .post-item {
+    border-top-color: rgba(255, 255, 255, 0.07);
   }
 }
