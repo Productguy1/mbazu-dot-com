@@ -91,7 +91,7 @@ const techCities = [
   'Toronto, Canada', 'Vancouver, Canada', 'Montreal, Canada', 'Waterloo, Canada',
   'Sydney, Australia', 'Melbourne, Australia', 'Brisbane, Australia', 'Auckland, NZ',
   'São Paulo, Brazil', 'Buenos Aires, Argentina', 'Bogotá, Colombia',
-  'Mexico City, Mexico', 'Santiago, Chile', 'Lima, Peru',
+  'Mexico City, Mexico', 'Santiago, Chile', 'Lima, Peru', 'Enugu, Nigeria', 
   'Lagos, Nigeria', 'Nairobi, Kenya', 'Cape Town, South Africa', 'Accra, Ghana',
   'Cairo, Egypt', 'Johannesburg, South Africa',
   'Reykjavik, Iceland', 'Ljubljana, Slovenia', 'Vilnius, Lithuania',
